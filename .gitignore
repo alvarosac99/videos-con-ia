@@ -1,0 +1,14 @@
+# Claves y secretos
+.env
+*.env
+!*.env.example
+
+# Salidas de ejemplo/trabajo si alguien prueba el kit desde aquí
+narration-toolkit/parts_*/
+narration-toolkit/previews/
+narration-toolkit/previews-es/
+narration-toolkit/__pycache__/
+*.pyc
+
+# Backups automáticos de retime.py
+index.html.bak

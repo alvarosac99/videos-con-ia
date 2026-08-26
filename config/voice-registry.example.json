@@ -1,0 +1,9 @@
+{
+  "_comment": "Solo para clonar.py (clonado local con Chatterbox). Mapea el índice de cada párrafo (0-based) a un 'registro' emocional. Cada registro necesita un fichero assets/voz-ref/ref_<registro>.wav — un clip corto de la voz de referencia hablando en ese tono. Si un párrafo no aparece aquí, usa 'default'.",
+  "default": "neutral",
+  "registry": {
+    "0": "intimo",
+    "1": "serio",
+    "2": "ilusionado"
+  }
+}

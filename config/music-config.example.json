@@ -1,0 +1,47 @@
+{
+  "_comment": "Config de montar_musica.py. Copia a narration/music-config.json y ajusta a tu composición. composition_id se autodetecta de index.html si lo dejas null.",
+  "composition_id": null,
+  "hook": 3.5,
+  "moods": [
+    {
+      "id": "mood_a",
+      "file": ".media/audio/bgm/mood_a.wav",
+      "from": 0.0,
+      "prompt": "Instrumental minimalista, tono serio y contenido, percusión seca, mucho espacio para una locución hablada por encima, sin voces ni melodías que compitan con la voz.",
+      "length_ms": 65000,
+      "fade_in": 2.0
+    },
+    {
+      "id": "mood_b",
+      "file": ".media/audio/bgm/mood_b.wav",
+      "from": "pivot",
+      "prompt": "Misma identidad sonora que mood_a pero en tono cálido y luminoso: misma base rítmica, acordes mayores, más cercano. No cambies de género. Sin voces.",
+      "length_ms": 140000,
+      "fade_out": 3.0
+    }
+  ],
+  "pivot": 60.0,
+  "crossfade": 4.0,
+  "sfx_dir": ".media/audio/sfx",
+  "highlights": [
+    { "at": "pivot-1.0", "sfx": "riser.mp3", "gain_db": -6 }
+  ],
+  "scene_cut_sfx": { "file": "whoosh-short.mp3", "gain_db": -14 },
+  "animation_anchor_groups": [
+    {
+      "_comment": "Cada grupo busca en el <script> del timeline la primera llamada .fromTo/.to que referencia #<id> y usa su tiempo absoluto. Útil para sincronizar SFX a la aparición de stickers, móviles, titulares, etc.",
+      "ids": ["sticker-1", "sticker-2"],
+      "sfx": "sticker_pop.mp3",
+      "gain_db": -18
+    }
+  ],
+  "ducking": {
+    "alignment_version": "v1",
+    "base_volume": 0.66,
+    "duck_volume": 0.38,
+    "attack": 0.25,
+    "release": 0.60,
+    "min_gap": 1.10,
+    "highlight_boost": 0.42
+  }
+}

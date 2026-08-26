@@ -1,0 +1,16 @@
+{
+  "_comment": "Qué párrafos del guion (índice 0-based en narration_<v>.txt) narra cada escena de la composición, en orden. Copia a narration/scene-map.json y ajusta los ids a los de tu index.html (elementos con class=\"clip\" id=\"scene-...\").",
+  "hook": 3.5,
+  "tail": 1.3,
+  "lead": 0.18,
+  "intro_scene": "scene-logo",
+  "_intro_scene_comment": "id de una escena fija de 0 a 'hook' segundos (logo/título antes de que entre la voz), si tu composición tiene una. Omite este campo (o pon null) si la narración empieza en el segundo 0.",
+  "scenes": [
+    { "id": "scene-gancho", "paragraphs": [0] },
+    { "id": "scene-problema", "paragraphs": [1] },
+    { "id": "scene-evidencia", "paragraphs": [2] },
+    { "id": "scene-giro", "paragraphs": [3] },
+    { "id": "scene-solucion", "paragraphs": [4, 5] },
+    { "id": "scene-cierre", "paragraphs": [6] }
+  ]
+}
