@@ -94,6 +94,17 @@ realinea después.
    `montar_musica.py` — todos dependen de `narration_<v>.alignment.json`.
 5. **`retime.py` deja backup** en `index.html.bak` — no lo borres a mano, es
    la red de seguridad si un retime sale mal.
+6. **Si `generate-chunked.sh` parte el guion en más de un bloque, escucha el
+   audio final justo alrededor de cada costura entre bloques antes de dar la
+   narración por buena.** eleven_v3 rechaza tanto `previous_request_ids`
+   como `previous_text`/`next_text` (ver cabecera del script): cada bloque
+   se sintetiza sin ningún contexto del vecino, así que la costura puede
+   sonar a tartamudeo o a un cambio brusco de tono/ritmo aunque el corte
+   caiga en una pausa real del texto. No basta con comprobar que el guion
+   íntegro suena bien de oído alzado; el defecto está justo en el punto de
+   unión y hay que ir a escucharlo ahí. Si se nota, la vía es reducir el
+   número de bloques (agrupar párrafos) antes de regenerar, no intentar
+   arreglarlo en el montaje final.
 
 ## 4. Qué hace cada script
 
