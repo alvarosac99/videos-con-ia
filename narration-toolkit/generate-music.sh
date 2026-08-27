@@ -68,7 +68,10 @@ PY
   if [[ -f "$out" ]]; then
     cp "$out" "${out%.wav}_prev.wav.bak"
   fi
-  ffmpeg -v error -y -i "$TMP_DIR/${id}.mp3" -ar 44100 -ac 2 -sample_fmt s16 "$out"
+  # -nostdin: sin esto, el sondeo de teclado de ffmpeg se come el resto de
+  # moods.txt (el fichero del que lee el `while read` que envuelve esta
+  # función), y el bucle solo procesa el primer mood sin avisar del resto.
+  ffmpeg -v error -y -nostdin -i "$TMP_DIR/${id}.mp3" -ar 44100 -ac 2 -sample_fmt s16 "$out"
 
   local dur
   dur="$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$out")"
@@ -119,8 +122,10 @@ which, tmp, proj = sys.argv[2], sys.argv[3], pathlib.Path(sys.argv[4])
 moods = [m for m in cfg["moods"] if which in ("all", "both") or m["id"] == which]
 if not moods:
     sys.exit(f"ERROR: ningún mood con id '{which}' en {sys.argv[1]}")
+    # trailing \n en cada línea (no solo entre líneas): el `while read` de abajo
+    # descarta en silencio una última línea sin salto final.
 (pathlib.Path(tmp) / "moods.txt").write_text(
-    "\n".join(f"{m['id']}\t{proj / m['file']}\t{m['length_ms']}\t{m['prompt']}" for m in moods),
+    "".join(f"{m['id']}\t{proj / m['file']}\t{m['length_ms']}\t{m['prompt']}\n" for m in moods),
     encoding="utf-8")
 PY
 
