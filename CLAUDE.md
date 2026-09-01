@@ -34,13 +34,17 @@ cp -r narration-toolkit/* <proyecto>/narration/
 cp .env.example <proyecto>/narration/.env   # y rellena la clave
 cp config/scene-map.example.json <proyecto>/narration/scene-map.json
 cp config/music-config.example.json <proyecto>/narration/music-config.json
+cp config/design-config.example.json <proyecto>/narration/design-config.json
 cp templates/guion-template.md <proyecto>/narration/guion-para-locutar.md
 ```
 
-Edita `scene-map.json`, `music-config.json` y el guion para que encajen con
-la composición real (ver `narration-toolkit/README.md` para el formato de
-cada uno). El resto de scripts no necesitan tocarse: leen esos ficheros de
-configuración, no llevan nada hardcodeado del proyecto.
+Edita `scene-map.json`, `music-config.json`, `design-config.json` y el guion
+para que encajen con la composición real (ver `narration-toolkit/README.md`
+para el formato de cada uno). `design-config.json` es solo color de acento +
+tipografía — el peso visual del vídeo lo llevan los clips que van apareciendo
+en cada escena, no la tipografía. El resto de scripts no necesitan tocarse:
+leen esos ficheros de configuración, no llevan nada hardcodeado del
+proyecto.
 
 ## 2. El pipeline, en orden
 
