@@ -1,0 +1,17 @@
+{
+  "_comment": "Identidad visual por defecto de la composición: color y tipografía. Copia a narration/design-config.json y ajústalo a tu marca. No define el peso visual del vídeo — eso lo llevan los clips que van apareciendo en cada escena (ver media-config / capture), esto es solo el color de acento y la fuente que envuelve esos clips (títulos, chips, barra de progreso, etc.). Consúmelo como variables CSS en el <style> de tu index.html o pégalo en tu frame.md si usas el sistema de diseño de HyperFrames.",
+  "colors": {
+    "primary": "#005AFF",
+    "_primary_comment": "Único color de acento. No inventes una paleta secundaria a partir de él sin que el usuario la pida.",
+    "background": "#0B0B0E",
+    "text": "#F5F6FA",
+    "text_muted": "#9A9CA8"
+  },
+  "typography": {
+    "font_family": "Cairo",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap",
+    "weight_display": 800,
+    "weight_body": 400,
+    "_comment": "Una sola familia tipográfica para todo (display + cuerpo), pesos distintos. No añadas una segunda fuente sin que el usuario la pida."
+  }
+}

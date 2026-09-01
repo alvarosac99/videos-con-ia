@@ -27,7 +27,8 @@ parametrizado para el siguiente proyecto.
 - **`templates/guion-template.md`** — el formato de guion (un párrafo por
   escena, con anotaciones de tono entre líneas) que usan los scripts.
 - **`config/*.example.json`** — plantillas de configuración por proyecto
-  (mapa de escenas, moods musicales, registro emocional de voz).
+  (mapa de escenas, moods musicales, registro emocional de voz, identidad
+  visual — color de acento y tipografía).
 - **`CLAUDE.md`** — instrucciones para que un agente de IA se autoconfigure
   al encontrar este kit dentro de un proyecto.
 
